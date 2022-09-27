@@ -5,4 +5,5 @@ Cargo.lock
 
 
 .idea
-Nezumi.iml
+.env
+nezumi.iml

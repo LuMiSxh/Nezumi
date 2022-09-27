@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  discord_bot:
+    container_name: "discord_bot"
+    build:
+      context: "."
+      dockerfile: ".dockerfile"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    volumes:
+      - type: volume
+        source: projekte
+        target: /discord_bot/backend
+
+  database:
+    image: surrealdb/surrealdb:latest
+    command:
+      - start
+    ports:
+      - "8000:8000"
+    volumes:
+      - type: volume
+        source: projekte
+        target: /discord_bot/database
+
+volumes:
+  projekte:

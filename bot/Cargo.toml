@@ -6,3 +6,23 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+common = {path = "../common"}
+poise = "0.3.0"
+
+[dependencies.serenity]
+default-features = false
+features = [
+    "builder",
+    "cache",
+    "client",
+    "framework",
+    "gateway",
+    "http",
+    "model",
+    "standard_framework",
+    "utils",
+    "collector",
+    "temp_cache",
+    "native_tls_backend"
+]
+version = "0.11"
